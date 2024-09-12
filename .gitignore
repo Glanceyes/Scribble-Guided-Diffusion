@@ -1,0 +1,57 @@
+**/__pycache__/
+**/__pycache__/*
+.vscode/
+.DS_Store
+*.tar
+*.zip
+run.sh
+*.sh
+*.pkl
+*.pt
+Glayout
+visual
+visual/*
+CLIP
+CLIP/*
+diffusers/
+diffusers/*
+
+# checkpoints
+checkpoints/
+checkpoints/*
+!checkpoints/stable_diffusion/*
+
+# configs
+configs/
+configs/*
+!configs/config.json
+
+# environments
+
+
+# examples
+examples/*
+!examples/example1/
+!examples/example1/*
+
+# experiments
+experiments/
+experiments/*
+model_comparisons/
+model_comparisons/*
+run_boxdiff.py
+run_densediff.py
+
+# results
+runs/*
+outputs/*
+
+# test
+test/
+test/*
+
+# misc
+logs/
+logs/*
+
+
