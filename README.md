@@ -8,15 +8,26 @@ Seonho Lee, Jiho Choi, Seohyun Lim, Jiwook Kim, Hyunjung Shim<br>
 
 
 ## Setup
+
+First, create and activate a new conda environment:
+
 ```bash
 conda create --name highlight-guided python==3.8.0
 conda activate highlight-guided
 conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
+```
 
+Next, install the necessary dependencies:
+
+```bash
 pip install -r environments/requirements_all.txt
 # if this does not work, try the following
 pip install -r environments/requirements.txt
+```
 
+Install additional libraries:
+
+```bash
 pip install git+https://github.com/CompVis/taming-transformers.git
 pip install git+https://github.com/openai/CLIP.git
 ```
@@ -27,17 +38,34 @@ Download the model [GLIGEN](https://huggingface.co/gligen/gligen-generation-text
 
 ## Inference 
 
-To draw a scribble for the guidance:
+To create scribbles for guidance:
 ```bash
 python draw_scribble.py
 ```
+
+After drawing the scribbles, save the images in the */strokes directory, for example:
+
+```bash
+examples/example1/strokes
+```
+
+Ensure the directory structure matches the configuration file paths. For instance, in `configs/config.json`:
+
+For `config.json`
+
+```json
+"stroke_dir": "examples/example1/strokes",
+"save_scribble_dir": "examples/example1/scribbles",
+"save_mask_dir": "examples/example1/masks",
+```
+
 
 To run with user input text prompts:
 ```bash
 python inference.py --ckpt checkpoints/gligen/text-box/diffusion_pytorch_model.bin
 ```
 
-Configuration files are provided in the `configs` directory. To run the model with the default configuration:
+To use the default configuration file:
 ```bash
 python inference.py --config configs/config.json
 ```
