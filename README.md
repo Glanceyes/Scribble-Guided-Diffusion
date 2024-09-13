@@ -1,11 +1,50 @@
-# Scribble-Guided Diffusion for Training-free Text-to-Image Generation
+<h1 align="center">
+Scribble-Guided Diffusion for<br/>Training-free Text-to-Image Generation
+</h1>
+<h4 align="center">
+<a href="https://scholar.google.co.kr/citations?user=i0OKV8wAAAAJ&hl=en">Seonho Lee<sup>*</sup></a>, <a href="https://scholar.google.co.kr/citations?user=DFKGTG0AAAAJ&hl=en">Jiho Choi<sup>*</sup></a>, <a href="">Seohyun Lim</a>, <a href="https://scholar.google.co.kr/citations?user=i0OKV8wAAAAJ&hl=en">Jiwook Kim</a>, <a href="https://scholar.google.co.kr/citations?user=KB5XZGIAAAAJ&hl=en">Hyunjung Shim</a><br>
+</h4>
+<h5 align="center">
+(*Equal contribution)<br>
+</h5>
 
+<h4 align="center">
 
+[![arXiv](https://img.shields.io/badge/arXiv-2409.08026-b31b1b.svg)](https://arxiv.org/abs/2409.08026)
+[![Project page](https://img.shields.io/badge/Project-Page-brightgreen)]()
 
-Seonho Lee, Jiho Choi, Seohyun Lim, Jiwook Kim, Hyunjung Shim<br>
+This is the official implementation of **Scribble-Guided-Diffusion**.
+
+</h4>
+
 
 <br/>
 
+## Abstract
+
+![Figure](./assets/asset_figure.png)
+
+Recent advancements in text-to-image diffusion models have demonstrated remarkable success, yet they often struggle to fully capture the user's intent. Existing approaches using textual inputs combined with bounding boxes or region masks fall short in providing precise spatial guidance, often leading to misaligned or unintended object orientation. To address these limitations, we propose <b>Scribble-Guided Diffusion <i>(ScribbleDiff)</i></b>, a training-free approach that utilizes simple user-provided scribbles as visual prompts to guide image generation. However, incorporating scribbles into diffusion models presents challenges due to their sparse and thin nature, making it difficult to ensure accurate orientation alignment. To overcome these challenges, we introduce moment alignment and scribble propagation, which allow for more effective and flexible alignment between generated images and scribble inputs. Experimental results on the PASCAL-Scribble dataset demonstrate significant improvements in spatial control and consistency, showcasing the effectiveness of scribble-based guidance in diffusion models. Please check the paper here: [Scribble-Guided Diffusion for Training-free Text-to-Image Generation](https://arxiv.org/abs/2409.08026)
+
+
+<br/>
+
+## News & Updates
+
+- [ ] **[TBA]** ✨ User-friendly scribble drawing tool will be released soon.
+
+- [ ] **[TBA]** ✨ Huggingface-based code will be released soon.
+
+- [x] **[2024/09/13]** 🌟 [LDM](https://github.com/CompVis/latent-diffusion)-based code was released. 
+
+<br/>
+
+
+## Architecture
+
+![Architecture](./assets/architecture.png)
+
+<br/>
 
 ## Setup
 
@@ -43,6 +82,7 @@ To create scribbles for guidance:
 python draw_scribble.py
 ```
 
+
 After drawing the scribbles, save the images in the */strokes directory, for example:
 
 ```bash
@@ -70,21 +110,14 @@ To use the default configuration file:
 python inference.py --config configs/config.json
 ```
 
+<br/>
 
-## Important Files
+![Scribble_Tool](./assets/scribble_demo.gif)
 
-```
-args.py
-data.py
-draw_highlight.py
-inference.py
-losses/loss_config.py
-losses/loss_scheduler.py
-losses/loss.py
-losses/utils.py
-scribble_propagation.py
-ldm/models/diffusion/plms.py
-```
+
+※ <i>We will provide a more user-friendly and intuitive scribble drawing tool in the future.</i>
+
+<br/>
 
 
 ## Acknowledgments
@@ -96,6 +129,7 @@ This project is built on the following resources:
 - [**GLIGEN**](https://github.com/gligen/GLIGEN): Our code is built upon the foundational work provided by GLIGEN. 
 
 
+<br/>
 
 
 ## Related Works
