@@ -82,6 +82,8 @@ To create scribbles for guidance:
 python draw_scribble.py
 ```
 
+※ <i>We will explain how to draw and save scribbles in the future.</i>
+
 
 After drawing the scribbles, save the images in the */strokes directory, for example:
 
